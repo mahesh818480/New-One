@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AlertyfyService } from '../services/alertyfy.service';
 import { AuthService } from '../services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 // import * as alertyfy from 'alertifyjs';
 
 
@@ -17,44 +18,46 @@ export class LoginComponent {
   login!: FormGroup;
   FormsData: any;
   storeValue: any;
-  loader :boolean= false;
+  loader: boolean = false;
+  ForegetFormsData: boolean = false;
 
-  constructor(private fb: FormBuilder,
-              private route: Router,
-              private alertyfy: AlertyfyService,
-              private authService:AuthService,
-              ) { }
+  constructor(
+    private route: Router,
+    private alertyfy: AlertyfyService,
+    private authService: AuthService,
+  ) { }
   ngOnInit() {
   }
-
-  OnLogin(loginForm: NgForm){
-    console.log(loginForm.value,'27::::')
+  OnLogin(loginForm: NgForm) {
     const user = this.authService.addUsers(loginForm.value)
-    if(user){
+    if (user) {
       this.loader = true;
-      setTimeout(()=>{
+      setTimeout(() => {
         this.alertyfy.Success();
         this.route.navigate([''])
-      },2000)
-    }else{
+      }, 2000)
+    } else {
       this.alertyfy.Error();
     }
   }
-  ForgetPassword(loginForm: NgForm){
-   console.log(loginForm.value,'38::')
-    
+  ForgetPassword(loginForm: NgForm) {
+    this.ForegetFormsData = true;
+    // this.popup = true
+    console.log(loginForm.value, '38::')
   }
-  Forget(ForgetForm:NgForm){
-    this.loader = true;
-    console.log(ForgetForm.value,'51:::')
+  Forget(ForgetForm: NgForm) {
+    this.loader = false;
     const user = this.authService.ForgetgetData(ForgetForm.value);
-    if(user){
+    if (user) {
       this.alertyfy.Success();
       this.alertyfy.alert(user.Password, user.Username);
+      this.ForegetFormsData = false;
     }
-    else{
+    else {
       this.alertyfy.Error();
     }
-
+  }
+  close() {
+    this.ForegetFormsData = false;
   }
 }

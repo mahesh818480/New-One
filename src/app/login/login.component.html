@@ -1,46 +1,65 @@
-
-    <div class="Login_page">
-      <div class="wrapper">
-        <h2>Login</h2>
-        <form action="#" #loginForm='ngForm' (ngSubmit)="OnLogin(loginForm)">
-          <div class="input-box">
-            <input type="text" placeholder="Enter your name" required ngModel name="Login_Username"required>
-            <!-- <small id="nameHelp" class="text-danger" *ngIf="loginForm.invalid">Required</small> -->
-            <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
-          </div>
-          <div class="input-box">
-            <input type="password" placeholder="Create password" required ngModel name="Login_Password">
-            <!-- <div class="error_message" *ngIf=" SubmitForm && password?.['errors']?.['required']">Password is required</div> -->
-          </div>
-          <div class="input-box button">
-            <input type="Submit" value="Login Now">
-          </div>
-          <div class="text">
-            <a href="#" (click)="ForgetPassword(loginForm)">Forget Password?</a>
-          </div>
-          <div class="text">
-            <h3>You have an account? <a routerLink="/signin">Signin now</a></h3>
-          </div>
-        </form>
-      
+<div class="Login_page">
+  <div class="wrapper">
+    <h2>Login</h2>
+    <form action="#" #loginForm='ngForm' (ngSubmit)="OnLogin(loginForm)">
+      <div class="input-box">
+        <input type="text" placeholder="Enter your name" required ngModel name="Login_Username" required>
+        <!-- <small id="nameHelp" class="text-danger" *ngIf="loginForm.invalid">Required</small> -->
+        <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
       </div>
-    
-  
-    </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create password" required ngModel name="Login_Password">
+        <!-- <div class="error_message" *ngIf=" SubmitForm && password?.['errors']?.['required']">Password is required</div> -->
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Login Now">
+      </div>
+      <div class="text">
+        <a (click)="ForgetPassword(loginForm)">Forget Password?</a>
+      </div>
+      <div class="text">
+        <h3>You have an account? <a routerLink="/signin">Signin now</a></h3>
+      </div>
+    </form>
 
-    <div *ngIf="loader">
-      <app-loader></app-loader>
-    </div>
+  </div>
+
+
+</div>
+
+<div *ngIf="loader" class="loader">
+  <app-loader></app-loader>
+</div>
+
+
+
+<div class="Forget_Bg"  *ngIf="ForegetFormsData">
+  <div class="Forget_Data" >
+   
+  <h1>hello</h1> 
+  <form action="" #ForgetForm='ngForm' (ngSubmit)="Forget(ForgetForm)">
     <div>
-      <h1>hello</h1>
-      <form action="" #ForgetForm='ngForm' (ngSubmit)="Forget(ForgetForm)">
-        <div>
-          <input class="input-box" type="text" placeholder="Enter your name" required ngModel name="Login_Username"required>
-          
-          <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
-        </div>
-        <div class="input_forget">
-          <input class="input_button" type="Submit" value="Submit">
-        </div>
-      </form>
+      <input class="input-box1" type="text" placeholder="Enter your name" required ngModel name="Login_Username"
+        required>
+
+      <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
     </div>
+    <div class="input_forget">
+      <button type="Submit">Submit</button>
+    </div>
+  </form>
+
+  <i (click)="close()" class="bi bi-x"></i>
+
+  
+
+ 
+
+</div>
+</div>
+
+
+
+
+
+
