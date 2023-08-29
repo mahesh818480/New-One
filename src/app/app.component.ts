@@ -16,6 +16,7 @@ export class AppComponent {
   constructor(private route:Router,private authservice:AuthService,private alertfy:AlertyfyService){}
   logout() {
     this.authservice.isUserLogOut();
+    this.alertfy.Success('successfully LogOut....');
     this.route.navigate(['']);
   }
  

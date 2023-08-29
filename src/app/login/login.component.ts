@@ -33,7 +33,7 @@ export class LoginComponent {
     if (user) {
       this.loader = true;
       setTimeout(() => {
-        this.alertyfy.Success();
+        this.alertyfy.Success('successfully Registeted....');
         this.route.navigate([''])
       }, 2000)
     } else {
@@ -49,7 +49,7 @@ export class LoginComponent {
     this.loader = false;
     const user = this.authService.ForgetgetData(ForgetForm.value);
     if (user) {
-      this.alertyfy.Success();
+      this.alertyfy.Success('successfully Registeted....');
       this.alertyfy.alert(user.Password, user.Username);
       this.ForegetFormsData = false;
     }

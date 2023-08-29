@@ -6,8 +6,8 @@ import * as alertyfy from 'alertifyjs';
 })
 export class AlertyfyService {
   constructor() { }
-  Success() {
-    alertyfy.success('successfully Registeted....')
+  Success(message:any) {
+    alertyfy.success(message)
   }
   Error() {
     alertyfy.error('Please Kindly Enter Proper Details....')
