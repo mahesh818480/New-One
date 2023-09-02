@@ -12,14 +12,13 @@ export class GuardGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (!this.authService.isUserLoggedIn()) {
-        alert("You are not allowed to view this page.\nYou are redirected to login Page");    
-        this.router.navigate(["login"]);
+        alert("You are not allowed to view this page.\nYou are redirected to login Page");  
+        this.router.navigate(["login"],{ queryParams: { retUrl: route.url} });  
         console.log('Else Part')
         return false;
       } 
       else{
         console.log('Else Part')
-  // this.router.navigate(["product"]);
         return true;
       }
   }

@@ -10,8 +10,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  navBar_Data:boolean= true;
+  Contact_NavBard:boolean =false;
   overall:boolean = true;
   title = 'Dhup...';
+  
   @ViewChild('popup', {static: false}) popup: any;
   constructor(private route:Router,private authservice:AuthService,private alertfy:AlertyfyService){}
   logout() {
@@ -19,5 +22,9 @@ export class AppComponent {
     this.alertfy.Success('successfully LogOut....');
     this.route.navigate(['']);
   }
+  // contact(){
+  //   this.navBar_Data = false;
+  //   this.Contact_NavBard =true;
+  // }
  
 }
