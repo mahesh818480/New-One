@@ -1,0 +1,214 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House1.jfif"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House2.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House2.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House3.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House4.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "1 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/1BHK-House5.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "2 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/2BHK-House1.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "2 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/2BHK-House2.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "2 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/2BHK-House3.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "2 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/2BHK-House4.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "2 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"SR Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/2BHK-House5.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "3 BHK Float",
+            "description": "Family House",
+            "price": 6000,
+            "familyDiscount": 10,
+            "rating": 4.6,
+            "near":"Ameerpet Metro station",
+            "maintanance":"500",
+            "images": [
+                "assets/House-images/3BHK-House1.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "3 BHK Float",
+            "description": "Family House",
+            "price": 50000,
+            "familyDiscount": 5,
+            "rating": 4.6,
+            "near":"Begumpet flyower metro piller no 1553",
+            "maintanance":1500,
+            "images": [
+                "assets/House-images/3BHK-House2.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "3 BHK Float",
+            "description": "Family House",
+            "price": 36000,
+            "familyDiscount": 10,
+            "rating": 2.6,
+            "near":"Raidurg Police Station",
+            "maintanance":1000,
+            "images": [
+                "assets/House-images/3BHK-House3.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "3 BHK Float",
+            "description": "Family House",
+            "price": 24000,
+            "familyDiscount": 0,
+            "rating": 3.6,
+            "near":"Hitech city flyower",
+            "maintanance":"500",
+            "pincode":5000007,
+            "images": [
+                "assets/House-images/3BHK-House4.jfif"
+            ]
+        },
+        {
+            "id": 1,
+            "title": "3 BHK Float",
+            "description": "Family House / Bachelar House",
+            "price": 32000,
+            "familyDiscount": 0,
+            "rating": 4.6,
+            "near":"shaikpet Dmart",
+            "maintanance":"500",
+            "pincode":5000008,
+            "images": [
+                "assets/House-images/3BHK-House5.jfif"
+            ]
+        }
+    ]
+}

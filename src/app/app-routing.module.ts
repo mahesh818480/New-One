@@ -6,6 +6,8 @@ import { HomeComponent } from './home/home.component';
 import { GuardGuard } from './guard.guard';
 import { ProductsComponent } from './products/products.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { HousesComponent } from './houses/houses.component';
+import { HouseDetailsComponent } from './house-details/house-details.component';
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
@@ -13,7 +15,10 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'product',component:ProductsComponent ,canActivate: [GuardGuard],
   canActivateChild : [GuardGuard],},
-  {path:'contact',component:ContactsComponent}
+  {path:'contact',component:ContactsComponent},
+  {path:'House',component:HousesComponent,canActivate: [GuardGuard],
+  canActivateChild : [GuardGuard]},
+  {path:'House-Details',component:HouseDetailsComponent},
 ];
 
 @NgModule({

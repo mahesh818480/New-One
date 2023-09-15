@@ -1,0 +1,43 @@
+<p>houses works!</p>
+<div class="col-sm-3">
+    <div class="form-group">
+        <label for="exampleSelect1">ProgramCategory</label>
+        <div class="row">
+            <div class="col-sm-9">
+                <select class="form-control" (change)="myyy()" [(ngModel)]="selectdata">
+                    <option value="">Select House</option>
+                    <option value="1 BHK Float">1 BHK </option>
+                    <option value="2 BHK Float">2 BHK </option>
+                    <option value="3 BHK Float">3 BHK </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="col-sm-3">
+    <div class="form-group">
+        <label for="exampleSelect1">ProgramCategory</label>
+        <div class="row">
+            <div class="col-sm-9">
+                <select class="form-control" (change)="myyy()" [(ngModel)]="selectdata">
+                    <option value="">Select House</option>
+                    <option value="6000">5000 - 10000 </option>
+                    <option value="2 BHK Float">10000 - 20000 </option>
+                    <option value="3 BHK Float">20000 - 30000 </option>
+                    <option value="3 BHK Float">30000 - 40000 </option>
+                    <option value="3 BHK Float">40000 - 50000 </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="Houses-List">
+    <div *ngFor="let data of array">
+        <div class="rsk" (click)="GotoDetailsPage(data)">
+            <div>{{data.near}}</div>
+            <img src="{{data.images}}" alt="no image">
+            <div>{{data.title}}</div>
+            <div>{{data.price}}</div>
+        </div>
+    </div>
+</div>

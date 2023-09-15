@@ -14,6 +14,8 @@ import { AlertyfyService } from './services/alertyfy.service';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './services/auth.service';
 import { LoaderComponent } from './loader/loader.component';
+import { HousesComponent } from './houses/houses.component';
+import { HouseDetailsComponent } from './house-details/house-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { LoaderComponent } from './loader/loader.component';
     ProductsComponent,
     ContactsComponent,
     HomeComponent,
-    LoaderComponent
+    LoaderComponent,
+    HousesComponent,
+    HouseDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,12 +10,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  navBar_Data:boolean= true;
+  navBar_Data:boolean= false;
+  navdata:boolean=true
   Contact_NavBard:boolean =false;
   overall:boolean = true;
   title = 'Dhup...';
   
-  @ViewChild('popup', {static: false}) popup: any;
   constructor(private route:Router,private authservice:AuthService,private alertfy:AlertyfyService){}
   logout() {
     this.authservice.isUserLogOut();
