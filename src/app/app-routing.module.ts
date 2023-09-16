@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'contact',component:ContactsComponent},
   {path:'House',component:HousesComponent,canActivate: [GuardGuard],
   canActivateChild : [GuardGuard]},
-  {path:'House-Details',component:HouseDetailsComponent},
+  {path:'House-Details',component:HouseDetailsComponent,canActivate:[GuardGuard]},
 ];
 
 @NgModule({

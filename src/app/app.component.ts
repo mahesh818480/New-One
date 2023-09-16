@@ -25,6 +25,7 @@ export class AppComponent {
   // contact(){
   //   this.navBar_Data = false;
   //   this.Contact_NavBard =true;
+  
   // }
  
 }
