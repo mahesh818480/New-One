@@ -11,94 +11,49 @@ import { CommonService } from '../common.service';
 export class HousesComponent {
 
   HouseArrayData: any = [];
-  arrayData: any = [];
-  searchText: any;
-  selectdata: any;
+  selectdata: any='';
   array: any = [];
-  amount:any;
-  b: any=[];
-  ProdData:any[]=[];
-  amountCount: any=[];
+  amount: any='';
   bhkPrice: any;
-  booleanBhk: boolean =false;
-  priceBoolean: boolean =false;
+  CountData: any;
+  selectedProduct: any=[];
+  filterBy:any;
   constructor(private http: HttpClient, private route: Router, private commonservice: CommonService) {
   }
 
   ngOnInit() {
-    // this.commonservice.getJsonData().subscribe((res:any) =>{
-    //   this.HouseArrayData = res.products;
-    //   console.log(this.HouseArrayData,'28::')
-    // })
     this.http.get('assets/Houses.json').subscribe((res: any) => {
       this.HouseArrayData = res.products;
       this.array = res.products;
-      // this.amountCount = res.products;
     })
   }
 
   GotoDetailsPage(a: any) {
-    this.commonservice.HouserentDetails.subscribe((res) => {
-      this.arrayData = res
-    })
-    this.arrayData.push(a);
-    this.commonservice.getHouseData(this.arrayData)
-    this.route.navigate(['/House-Details'])
+    this.selectedProduct = a;
+    this.route.navigate(['/House-Details',a.id]);
+  }
+  SearchFilter(){
+   this.array = this.HouseArrayData.filter((user:any) => user.title.includes(this.filterBy))
   }
 
-  myyy() {
-    this.booleanBhk = true;
-    console.log(this.selectdata)
-    let a: any = [];
-    // if(!this.priceBoolean){
-    this.HouseArrayData.forEach((res: any) => {
-      if (res.title == this.selectdata) {
-        a.push(res);
-      }
-    });
-  // }
-  // if(this.priceBoolean){
-  //     // this.PriceList()
-  //     console.log('234234')
-  //     this.array.forEach((v:any)=>{
-  //       console.log(v,'0909090')
-  //       if(v.title == this.selectdata){
-  //         a.push(v)
-  //       }
-  //     })
-  //   }
-    this.array = a;
-    console.log(this.array,'9090')
-  }
-  PriceList(){
-    this.priceBoolean = true ;
-    this.b=[]
-    console.log(this.HouseArrayData,'111111',Number(this.amount.split('-')[0]),Number(this.amount.split('-')[1]))
-    let val1 =Number(this.amount.split('-')[0]);
-    let valu2 =Number(this.amount.split('-')[1])
-    if(!this.booleanBhk){
-      this.HouseArrayData.forEach((val:any) => {    
-        console.log(val.price,'0000')
-        if(val.price >= val1 && val.price <= valu2){
-          this.b.push(val)
-          console.log(this.b,'7777:::',this.amount)
-        }
-        
-      })
+  SelectDropDownData() {
+    if(this.amount){
+      let val1 =  Math.ceil(this.amount.split('-')[0]);
+      let valu2 = Math.ceil(this.amount.split('-')[1]);
+      this.array =  this.HouseArrayData.filter((val:any)=> val.Rent >= val1 && val.Rent <= valu2 && val.title == this.selectdata)
+    }else{
+      this.array = this.HouseArrayData.filter((val:any)=> val.title == this.selectdata);
     }
-    // if(this.booleanBhk){
-    //   this.myyy()
-    //   let val1 =Number(this.amount.split('-')[0]);
-    //   let valu2 =Number(this.amount.split('-')[1])
-    //   this.array.forEach((val:any)=>{
-    //     console.log(val,'9898')
-    //     if(val.price >= val1 && val.price <= valu2){
-    //       this.b.push(val)
-    //       console.log(this.b,'7777:::',this.amount)
-    //     }
-    //   })
-    // }
-    this.array = this.b;
-    console.log(this.array,'80')
+  }
+  PriceList() {
+    let val1 =  Math.ceil(this.amount.split('-')[0]);
+    let valu2 = Math.ceil(this.amount.split('-')[1]);
+    if(this.selectdata){
+      let val1 =  Math.ceil(this.amount.split('-')[0]);
+      let valu2 = Math.ceil(this.amount.split('-')[1]);
+      this.array =  this.HouseArrayData.filter((val:any)=> val.Rent >= val1 && val.Rent <= valu2 && val.title == this.selectdata)
+    }else{
+      this.array = this.HouseArrayData.filter((val:any)=> val.Rent >= val1 && val.Rent <= valu2);
+    }
   }
 }

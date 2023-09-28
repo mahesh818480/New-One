@@ -4,11 +4,21 @@
         <label for="exampleSelect1">ProgramCategory</label>
         <div class="row">
             <div class="col-sm-9">
-                <select class="form-control" (change)="myyy()" [(ngModel)]="selectdata">
-                    <option value="">Select House</option>
-                    <option value="1 BHK Float">1 BHK </option>
-                    <option value="2 BHK Float">2 BHK </option>
-                    <option value="3 BHK Float">3 BHK </option>
+            <input type="text" class="form-control" [(ngModel)]="filterBy" (keyup)="SearchFilter()">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="form-group">
+        <label for="exampleSelect1">ProgramCategory</label>
+        <div class="row">
+            <div class="col-sm-9">
+                <select class="form-control" (change)="SelectDropDownData()" [(ngModel)]="selectdata">
+                    <option value="Select House" disabled selected>Select House</option>
+                    <option value="1 BHK Flat">1 BHK </option>
+                    <option value="2 BHK Flat">2 BHK </option>
+                    <option value="3 BHK Flat">3 BHK </option>
                 </select>
             </div>
         </div>
@@ -19,8 +29,8 @@
         <label for="exampleSelect1">ProgramCategory</label>
         <div class="row">
             <div class="col-sm-9">
-                <select class="form-control"(change)="PriceList()" [(ngModel)]="amount" >
-                    <option value="">Select House</option>
+                <select class="form-control"(change)="PriceList()" [(ngModel)]="amount">
+                    <option value="Select Price" selected>Select Price</option>
                     <option value="3000-6000">3000-6000</option>
                     <option value="6000-10000">6000-10000</option>
                     <option value="10000-20000">10000-20000</option>
@@ -39,8 +49,11 @@
         <div class="Maintain_House">
         <div class="House-Name">{{data.Housename}}</div>
         <div> {{data.title}}</div>
-        <div>{{data.price}}</div>
+        <div>{{data.Rent}}</div>
         <button (click)="GotoDetailsPage(data)" class="btn btn-primary">View</button>
     </div>
     </div>
+</div>
+<div *ngIf="array.length <= 0">
+    <h1>No Data</h1>
 </div>

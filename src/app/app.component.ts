@@ -11,7 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AppComponent {
   navBar_Data:boolean= false;
-  navdata:boolean=true
+  navdata:boolean=true;
   Contact_NavBard:boolean =false;
   overall:boolean = true;
   title = 'Dhup...';

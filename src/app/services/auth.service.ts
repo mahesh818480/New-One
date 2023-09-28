@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { of } from 'rxjs';
@@ -7,7 +8,7 @@ import { of } from 'rxjs';
 })
 export class AuthService {
   private isloggedIn: boolean;
-  constructor(private route:Router) {
+  constructor(private route:Router , private http :HttpClient) {
     this.isloggedIn = false;
    }
 
@@ -35,4 +36,9 @@ export class AuthService {
     }
     return UserArray.find((p:any) => p.Username === user.Login_Username)
   }
+
+  updateMango(data :any){
+   return this.http.post('http://localhost:3000//api/update' ,data)
+  }
+
 }

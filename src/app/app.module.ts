@@ -16,6 +16,7 @@ import { AuthService } from './services/auth.service';
 import { LoaderComponent } from './loader/loader.component';
 import { HousesComponent } from './houses/houses.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
+import { ModalPopupComponent } from './modal-popup/modal-popup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { HouseDetailsComponent } from './house-details/house-details.component';
     HomeComponent,
     LoaderComponent,
     HousesComponent,
-    HouseDetailsComponent
+    HouseDetailsComponent,
+    ModalPopupComponent
   ],
   imports: [
     BrowserModule,

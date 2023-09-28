@@ -1,4 +1,135 @@
 <p>house-details works!</p>
-<div *ngFor="let a of DetailsArray">
-    {{a.near}}
+
+<div class="House-Details_Page">
+    <div *ngFor="let a of DetailsArray">
+        <div class="Location_Near"  *ngIf="productID != a.id">
+            <p>{{a.near}}</p>
+            <p>Near Location</p>
+        </div>
+
+        <div class="Rent_Deposit">
+            <div>
+                <span>&#8377;{{a.Rent}}</span>
+                <p>Rent</p>
+            </div>
+            <div>
+                <span>&#8377;{{a.Deposit}}</span>
+                <p>Deposite</p>
+            </div>
+            <div>
+                <span>{{a.square}} sqft</span>
+                <p>Builtup</p>
+            </div>
+        </div>
+
+        <div class="House_Information">
+            <div class="House_Image">
+                <img [src]="a.images" alt="">
+            </div>
+            <div class="details">
+                <div class="furniture-data">
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-loveseat"></i>{{a.Furniture}}</span>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-house"></i> &nbsp;{{a.title}}</span>
+                        <p>{{a.apartment}}</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-users"></i> &nbsp;Family</span>
+                        <p>Prefered Tenants</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-key"></i> &nbsp;Ready to Move</span>
+                        <p>Avalible From</p>
+                    </div>
+                </div>
+                <div class="view-furniture">
+                    <button class="view-button">Get {{a.Owner}} details</button>
+                    <button class="view-icon"><i (click)="GetSelectFav()" [ngClass]="selectFav ? 'favcolor':'Dummycolor'" class="fa-solid fa-heart"></i></button>
+                    <button class="view-icon"><i class="fa-brands fa-font-awesome"></i></button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="col-sm-3">
+    <div class="form-group">
+        <label for="exampleSelect1">ProgramCategory </label>
+        <div class="row">
+            <div class="col-sm-9">
+                <select class="form-control"(change)="PriceList()" [(ngModel)]="amount">
+                    <option value="Select Price" disabled selected>Select Price</option>
+                    <option value="3000-6000">3000-6000</option>
+                    <option value="6000-10000">6000-10000</option>
+                    <option value="10000-20000">10000-20000</option>
+                    <option value="20000-30000">20000-30000</option>
+                    <option value="30000-40000">30000-40000</option> 
+                    <option value="40000-50000">40000-50000</option>
+                    <option value="50000-100000">50000-100000</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="House-Details_Page"  *ngFor="let a of array">
+    <div *ngIf="productID != a.id">
+        <div class="Location_Near">
+            <p>{{a.near}}</p>
+            <p>Near Location</p>
+        </div>
+
+        <div class="Rent_Deposit">
+            <div>
+                <span>&#8377;{{a.Rent}}</span>
+                <p>Rent</p>
+            </div>
+            <div>
+                <span>&#8377;{{a.Deposit}}</span>
+                <p>Deposite</p>
+            </div>
+            <div>
+                <span>{{a.square}} sqft</span>
+                <p>Builtup</p>
+            </div>
+        </div>
+
+        <div class="House_Information">
+            <div class="House_Image">
+                <img [src]="a.images" alt="">
+            </div>
+            <div class="details">
+                <div class="furniture-data">
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-loveseat"></i>{{a.Furniture}}</span>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-house"></i> &nbsp;{{a.title}}</span>
+                        <p>{{a.apartment}}</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-users"></i> &nbsp;Family</span>
+                        <p>Prefered Tenants</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-key"></i> &nbsp;Ready to Move</span>
+                        <p>Avalible From</p>
+                    </div>
+                </div>
+                <div class="view-furniture">
+                    <button class="view-button">Get {{a.Owner}} details</button>
+                    <button class="view-icon"><i class="fa-solid fa-heart"></i></button>
+                    <button class="view-icon"><i class="fa-brands fa-font-awesome"></i></button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
 </div>

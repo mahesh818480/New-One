@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as alertyfy from 'alertifyjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -15,7 +16,7 @@ export class SigninComponent {
   emailRegEx = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   register:any[]=[];
   SignInForm_Data: any;
-  constructor(private fb:FormBuilder,private route:Router){}
+  constructor(private fb:FormBuilder,private route:Router , private service : AuthService){}
   ngOnInit(){
     // localStorage.getItem("data");
     this.signin = this.fb.group({
@@ -36,7 +37,7 @@ export class SigninComponent {
   }
   SigninForm(){
     this.SubmitForm = true;
-    
+     this.service.updateMango(this.signin.value).subscribe()
     if(this.signin.status === 'VALID'){
       let data:any = localStorage.getItem('data') || '[]';
       this.register = JSON.parse(data);

@@ -9,6 +9,7 @@ import { AlertyfyService } from '../services/alertyfy.service';
 })
 export class HomeComponent {
   arr: any=[];
+  popUp=false;
 
   constructor(private http:HttpClient,private alerty:AlertyfyService){
     
@@ -17,6 +18,7 @@ export class HomeComponent {
     
   }
   getData(){
-    this.alerty.PopUp('hello');
+    // this.popUp = true;
+    // this.alerty.PopUp('hello');
   }
 }
