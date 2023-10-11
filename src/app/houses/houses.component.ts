@@ -22,6 +22,7 @@ export class HousesComponent {
   }
 
   ngOnInit() {
+    console.log('123')
     this.http.get('assets/Houses.json').subscribe((res: any) => {
       this.HouseArrayData = res.products;
       this.array = res.products;
@@ -29,11 +30,12 @@ export class HousesComponent {
   }
 
   GotoDetailsPage(a: any) {
+    console.log(a,'76:::',)
     this.selectedProduct = a;
     this.route.navigate(['/House-Details',a.id]);
   }
   SearchFilter(){
-   this.array = this.HouseArrayData.filter((user:any) => user.title.includes(this.filterBy))
+   this.array = this.HouseArrayData.filter((user:any) => user.title != user.title);
   }
 
   SelectDropDownData() {

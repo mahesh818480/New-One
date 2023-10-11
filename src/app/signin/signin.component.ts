@@ -39,6 +39,7 @@ export class SigninComponent {
     this.SubmitForm = true;
      this.service.updateMango(this.signin.value).subscribe()
     if(this.signin.status === 'VALID'){
+      console.log(this.signin.status)
       let data:any = localStorage.getItem('data') || '[]';
       this.register = JSON.parse(data);
       console.log(this.register,'123')

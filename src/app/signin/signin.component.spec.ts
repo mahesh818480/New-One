@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SigninComponent } from './signin.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -10,7 +11,7 @@ describe('SigninComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
-      imports:[ReactiveFormsModule]
+      imports:[ReactiveFormsModule,HttpClientTestingModule]
     })
     .compileComponents();
 

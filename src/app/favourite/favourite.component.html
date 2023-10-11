@@ -1,0 +1,59 @@
+
+<div class="House-Details_Page">
+    <div *ngFor="let a of storeArray">
+        <!-- <div class="Location_Near"  *ngIf="productID != a.id">
+            <p>{{a.near}}</p>
+            <p>Near Location</p>
+        </div> -->
+
+        <div class="Rent_Deposit">
+            <div>
+                <span>&#8377;{{a.Rent}}</span>
+                <p>Rent</p>
+            </div>
+            <div>
+                <span>&#8377;{{a.Deposit}}</span>
+                <p>Deposite</p>
+            </div>
+            <div>
+                <span>{{a.square}} sqft</span>
+                <p>Builtup</p>
+            </div>
+        </div>
+
+        <div class="House_Information">
+            <div class="House_Image">
+                <img [src]="a.images" alt="">
+            </div>
+            <div class="details">
+                <div class="furniture-data">
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-loveseat"></i>{{a.Furniture}}</span>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-house"></i> &nbsp;{{a.title}}</span>
+                        <p>{{a.apartment}}</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-users"></i> &nbsp;Family</span>
+                        <p>Prefered Tenants</p>
+                    </div>
+                    <div class="Furniture_Details">
+                        <span><i class="fa-solid fa-key"></i> &nbsp;Ready to Move</span>
+                        <p>Avalible From</p>
+                    </div>
+                </div>
+                <div class="view-furniture">
+                    <button class="view-button">Get Owner details</button>
+                    <!-- <button class="view-icon"><i (click)="GetSelectFave()" [ngClass]="selectFav ? 'favcolor':'Dummycolor'" class="fa-solid fa-heart"></i></button> -->
+                    <button class="view-icon" (click)="HomePage()">Home Page</button>
+                    <button class="view-icon"><i class="fa-brands fa-font-awesome"></i></button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -36,6 +36,7 @@ export class LoginComponent {
   }
   OnLogin(loginForm: NgForm) {
     const user = this.authService.addUsers(loginForm.value)
+    console.log(user,'12222')
     if (user) {
       this.loader = true;
       setTimeout(() => {

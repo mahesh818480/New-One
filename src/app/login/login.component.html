@@ -3,7 +3,8 @@
     <h2>Login</h2>
     <form action="#" #loginForm='ngForm' (ngSubmit)="OnLogin(loginForm)">
       <div class="input-box">
-        <input type="text" placeholder="Enter your name" required ngModel name="Login_Username" required>
+        <input type="text" placeholder="Enter your name" required ngModel name="Login_Username" required tooltip
+          tooltip-placement="right">
         <!-- <small id="nameHelp" class="text-danger" *ngIf="loginForm.invalid">Required</small> -->
         <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
       </div>
@@ -33,33 +34,21 @@
 
 
 
-<div class="Forget_Bg"  *ngIf="ForegetFormsData">
-  <div class="Forget_Data" >
-   
-  <h1>Forget Password</h1> 
-  <form action="" #ForgetForm='ngForm' (ngSubmit)="Forget(ForgetForm)">
-    <div>
-      <input class="input-box1" type="text" placeholder="Enter your name" required ngModel name="Login_Username"
-        required>
+<div class="Forget_Bg" *ngIf="ForegetFormsData">
+  <div class="Forget_Data">
 
-      <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
-    </div>
-    <div class="input_forget">
-      <button type="Submit">Submit</button>
-    </div>
-  </form>
+    <h1>Forget Password</h1>
+    <form action="" #ForgetForm='ngForm' (ngSubmit)="Forget(ForgetForm)">
+      <div>
+        <input class="input-box1" type="text" placeholder="Enter your name" required ngModel name="Login_Username"
+          required>
 
-  <i (click)="close()" class="bi bi-x"></i>
-
-  
-
- 
-
+        <!-- <div class="error_message" *ngIf="SubmitForm && name?.invalid  && name?.['errors']?.['required']">Uesrname is required</div> -->
+      </div>
+      <div class="input_forget">
+        <button type="Submit">Submit</button>
+      </div>
+    </form>
+    <i (click)="close()" class="bi bi-x"></i>
+  </div>
 </div>
-</div>
-
-
-
-
-
-

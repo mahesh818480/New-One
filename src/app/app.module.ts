@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +16,8 @@ import { LoaderComponent } from './loader/loader.component';
 import { HousesComponent } from './houses/houses.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { ModalPopupComponent } from './modal-popup/modal-popup.component';
+import { FavouriteComponent } from './favourite/favourite.component';
+import { BreadcrumbModule } from 'xng-breadcrumb';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +29,15 @@ import { ModalPopupComponent } from './modal-popup/modal-popup.component';
     LoaderComponent,
     HousesComponent,
     HouseDetailsComponent,
-    ModalPopupComponent
+    ModalPopupComponent,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BreadcrumbModule,
     ReactiveFormsModule,FormsModule,
     HttpClientModule,
-    NgbModule
   ],
   providers: [GuardGuard,AuthService,AlertyfyService],
   bootstrap: [AppComponent]

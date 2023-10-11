@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { LoaderComponent } from '../loader/loader.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -15,10 +16,12 @@ describe('LoginComponent', () => {
   let service:AuthService;
   let routing:Router;
 
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ LoginComponent ,LoaderComponent],
       imports:[ReactiveFormsModule,RouterTestingModule,RouterTestingModule,FormsModule,
+        HttpClientTestingModule,
         RouterTestingModule.withRoutes(
           [{path: 'signin', component: SigninComponent},
           {path: 'home', component: SigninComponent}]

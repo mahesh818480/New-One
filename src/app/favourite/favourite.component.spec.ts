@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HousesComponent } from './houses.component';
+import { FavouriteComponent } from './favourite.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-describe('HousesComponent', () => {
-  let component: HousesComponent;
-  let fixture: ComponentFixture<HousesComponent>;
+describe('FavouriteComponent', () => {
+  let component: FavouriteComponent;
+  let fixture: ComponentFixture<FavouriteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HousesComponent ],
-      imports:[HttpClientTestingModule]
+      declarations: [ FavouriteComponent ],
+      imports: [ HttpClientTestingModule ],
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HousesComponent);
+    fixture = TestBed.createComponent(FavouriteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,7 +22,4 @@ describe('HousesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should be called ngOnit', () =>{
-    component.ngOnInit()
-  })
 });

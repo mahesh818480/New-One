@@ -11,8 +11,12 @@ export class CommonService implements OnInit {
   ngOnInit(): void {
     this.getHouseData(eval)
   }
-  HouserentDetails = new BehaviorSubject([])
+  HouserentDetails = new BehaviorSubject([]);
+  Favourite = new BehaviorSubject([]);
 
+  favouriteData(val:any){
+    this.Favourite.next(val);
+  }
   getHouseData(val:any){
     console.log(val,'service');
     this.HouserentDetails.next(val)

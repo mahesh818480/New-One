@@ -57,5 +57,13 @@
     </nav>
     
     <router-outlet></router-outlet>
+    <div class="container">
+      <xng-breadcrumb [autoGenerate]="false">
+        <ng-container *xngBreadcrumbItem="let breadcrumb of breadcrumb">
+          <p [routerLink]="breadcrumb.url">{{breadcrumb}}</p>
+        </ng-container>
+      </xng-breadcrumb>
+    </div>
   </div>
+
   

@@ -1,7 +1,8 @@
 <p>houses works!</p>
+
 <div class="col-sm-3">
     <div class="form-group">
-        <label for="exampleSelect1">ProgramCategory</label>
+        <label for="exampleSelect1">SearchFilter</label>
         <div class="row">
             <div class="col-sm-9">
             <input type="text" class="form-control" [(ngModel)]="filterBy" (keyup)="SearchFilter()">
@@ -11,7 +12,7 @@
 </div>
 <div class="col-sm-3">
     <div class="form-group">
-        <label for="exampleSelect1">ProgramCategory</label>
+        <label for="exampleSelect1">Select Category</label>
         <div class="row">
             <div class="col-sm-9">
                 <select class="form-control" (change)="SelectDropDownData()" [(ngModel)]="selectdata">
@@ -26,7 +27,7 @@
 </div>
 <div class="col-sm-3">
     <div class="form-group">
-        <label for="exampleSelect1">ProgramCategory</label>
+        <label for="exampleSelect1">Rent Filter </label>
         <div class="row">
             <div class="col-sm-9">
                 <select class="form-control"(change)="PriceList()" [(ngModel)]="amount">
@@ -54,6 +55,7 @@
     </div>
     </div>
 </div>
+
 <div *ngIf="array.length <= 0">
     <h1>No Data</h1>
 </div>
