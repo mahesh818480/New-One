@@ -13,6 +13,9 @@ export class CommonService implements OnInit {
   }
   HouserentDetails = new BehaviorSubject([]);
   Favourite = new BehaviorSubject([]);
+  UserLogin = new BehaviorSubject('');
+  // NavBarHide = 
+
 
   favouriteData(val:any){
     this.Favourite.next(val);
@@ -23,5 +26,8 @@ export class CommonService implements OnInit {
   }
   getJsonData(){
     return this.http.get('assets/Houses.json');
+  }
+  UserBehavior(data:any){
+    this.UserLogin.next(data)
   }
 }

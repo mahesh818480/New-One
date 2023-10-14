@@ -9,13 +9,15 @@ import { FormsModule } from '@angular/forms';
 import { CommonService } from '../common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
+import { AlertyfyService } from '../services/alertyfy.service';
 
 describe('HouseDetailsComponent', () => {
   let component: HouseDetailsComponent;
   let fixture: ComponentFixture<HouseDetailsComponent>;
-  let service: jasmine.SpyObj<CommonService>;
+  let service: CommonService;
   let mockRoute:jasmine.SpyObj<Router>;
-  let mockActiveRouter:jasmine.SpyObj<ActivatedRoute>;
+  let mockActiveRouter:ActivatedRoute;
+  let alertfy:AlertyfyService
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -28,13 +30,18 @@ describe('HouseDetailsComponent', () => {
     fixture = TestBed.createComponent(HouseDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    service = jasmine.createSpyObj('CommonService',['getJsonData']);
-    service.getJsonData.and.returnValue({} as any)
+    // service = jasmine.createSpyObj('CommonService',['getJsonData']);
+    // service.getJsonData.and.returnValue({} as any)
+    service = TestBed.inject(CommonService)
+    // alertfy.Success.and.returnValue('Otp Successfull...' as any)
+    mockActiveRouter = TestBed.inject(ActivatedRoute)
+    alertfy = TestBed.inject(AlertyfyService)
 
     component = new HouseDetailsComponent(
       service,
       mockActiveRouter,
       mockRoute,
+      alertfy
     )
   });
 

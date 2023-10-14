@@ -116,3 +116,11 @@ p {
   .Dummycolor{
     color: black;
   }
+  .OTP{
+    display: flex;
+    // max-width: 25px;
+    gap: 23px;
+    input{
+        width: 40px;
+    }
+  }

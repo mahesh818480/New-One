@@ -13,13 +13,15 @@ import { FavouriteComponent } from './favourite/favourite.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent,data:{breadcrumb:'Login'} },
   { path: 'signin', component: SigninComponent,data:{breadcrumb:'sigin'} },
-  { path: '', component: HomeComponent },
+  // { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   {
     path: 'product', component: ProductsComponent, canActivate: [GuardGuard],
     canActivateChild: [GuardGuard],
   },
   { path: 'contact', component: ContactsComponent },
   // {path:'House',component:HousesComponent},
+
   { path: 'House', component: HousesComponent, canActivate: [GuardGuard],data:{breadcrumb:'House'}},
   { path: 'House-Details', component: HouseDetailsComponent, canActivate: [GuardGuard],data:{breadcrumb:'House-Details'} },
   { path: 'House-Details/:products', component: HouseDetailsComponent },

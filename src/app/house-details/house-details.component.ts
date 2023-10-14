@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../common.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AlertyfyService } from '../services/alertyfy.service';
 
 @Component({
   selector: 'app-house-details',
@@ -24,11 +25,17 @@ export class HouseDetailsComponent {
   FavouritesArry: any = [];
   FavouritesData: boolean = false;
   FrtarrayData: any = [];
-  popup:boolean=false;
+  popup: boolean = false;
+  error:boolean = true;
   // searchValue: any;
-  searchValue: any;
+  searchValue ='';
+  OTP1:any;
+  OTP2:any;
+  OTP3:any;
+  OTP4:any;
+  otpmodal: boolean=false;
 
-  constructor(private service: CommonService, private route: ActivatedRoute, private router: Router) {
+  constructor(private service: CommonService,private alertfy:AlertyfyService, private route: ActivatedRoute, private router: Router) {
     this.service.Favourite.subscribe((res) => {
       this.FavouritesArry = res;
       console.log(res, '222222Res')
@@ -42,7 +49,7 @@ export class HouseDetailsComponent {
   }
 
   ngOnInit() {
-    console.log('12dd3')
+    console.log('0000')
     this.service.getJsonData().subscribe((res: any) => {
       this.MainData = res.products;
       this.MainData.filter((val: any) => {
@@ -68,6 +75,8 @@ export class HouseDetailsComponent {
     this.array.forEach((val: any, i: any) => {
       this.array[i]['selectedFavData'] = false;
     })
+    console.log( '2', this.overAllData);
+
   }
   PriceList() {
     let val1 = Number(this.amount.split('-')[0]);
@@ -85,29 +94,48 @@ export class HouseDetailsComponent {
   GetSelectFave() {
     this.selectFav = !this.selectFav;
   }
+
   TotalDataFav(a: any) {
-    console.log(a,'86:::')
+    console.log(a, '86:::')
     this.array.forEach((val: any, i: any) => {
-      console.log(i, '1112',val)
+      console.log(i, '1112', val)
       if (a == i && !val.selectedFavData) {
         this.array[i]['selectedFavData'] = true;
       } else if (a === i && val.selectedFavData) {
         this.array[i]['selectedFavData'] = false;
       }
     })
-    console.log(this.MainData,'012',this.array)
-    this.service.favouriteData(this.array.filter((val: any) => val.selectedFavData))
-    console.log(this.array.filter((val: any) => val.selectedFavData), '105;;;')
+    console.log(this.MainData, '012', this.array)
+    // this.service.favouriteData(this.array.filter((val: any) => val.selectedFavData));
+    this.service.favouriteData(this.array.filter((val: any) => val.selectedFavData));
+
+    console.log(this.array.filter((val: any) => val.selectedFavData), '105;;;');
   }
-  FavouriteData() {
-    this.router.navigate(['Favourite'])
+  GetOwnerDetails() {
+    this.otpmodal = true;
   }
-  GetOwnerDetails(){
-    console.log('Hello')
-    this.popup = true;
+  sendOtp(){
+    this.alertfy.Success('Otp Successfull...')
+    this.otpmodal = false;
+    // this.router.navigate(['House-Details'])
   }
-  onlyNumbers(){
-    let reg = /[0-9]/
-    console.log(this.searchValue,'00000',reg)
+  onlyNumberKey(e: any) {
+    if ((e.keyCode >= 48 && e.keyCode <= 57)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  SubmitData() {
+
+  }
+  SubmitNumber(){
+    if(this.searchValue.length){
+      this.error = true;
+      console.log('if:::')
+    }else{
+      this.error = false;
+      console.log('else')
+    }
   }
 }

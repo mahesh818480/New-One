@@ -1,7 +1,4 @@
-<p>house-details works!</p>
-<div>
-    <button (click)="FavouriteData()">Favourite</button>
- </div>
+
 <div class="House-Details_Page">
     <div *ngFor="let a of DetailsArray">
         <div class="Location_Near"  *ngIf="productID != a.id">
@@ -123,8 +120,7 @@
                     </div>
                 </div>
                 <div class="view-furniture">
-                    <button class="view-button"data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="GetOwnerDetails()">Get Owner details</button>
-                    {{selectedFavData | json}}11
+                    <button class="view-button"data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="GetOwnerDetails()">Get Owner details</button>
                     <button class="view-icon"><i (click)="TotalDataFav(i)" [ngClass]="a.selectedFavData ? 'favcolor':'Dummycolor'" class="fa-solid fa-heart"></i></button>
                     <button class="view-icon"><i class="fa-brands fa-font-awesome"></i></button>
                 </div>
@@ -135,23 +131,20 @@
 </div>
 
 <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" >
-    Launch demo modal
-  </button> -->
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            
                 <div class="mb-3">
                   <label for="recipient-name" class="col-form-label">Phone:</label>
-                  <input type="number" (keypress)="onlyNumbers()" [(ngModel)]="searchValue" class="form-control" id="recipient-name">
+                  <input type="text" (keypress)="onlyNumberKey($event)" maxlength="10" [(ngModel)]="searchValue" class="form-control" id="recipient-name">
+                </div>
+                <div *ngIf="error">
+                    form is required
                 </div>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label">Message:</label>
@@ -161,7 +154,39 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModa" (click)="SubmitNumber()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTP -->
+  <!-- <button data-bs-toggle="modal" data-bs-target="#exampleModa">ADDD</button> -->
+  <div *ngIf="otpmodal" class="modal fade" id="exampleModa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">OTP</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body OTP">
+                <div class="mb-3">
+                    <input type="text" (keypress)="onlyNumberKey($event)" maxlength="1" [(ngModel)]="OTP1" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" (keypress)="onlyNumberKey($event)" maxlength="1" [(ngModel)]="OTP2" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" (keypress)="onlyNumberKey($event)" maxlength="1" [(ngModel)]="OTP3" class="form-control" id="recipient-name">
+                  </div>
+                  <div class="mb-3">
+                    <input type="text" (keypress)="onlyNumberKey($event)" maxlength="1" [(ngModel)]="OTP4" class="form-control" id="recipient-name">
+                  </div>
+             
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" (click)="sendOtp()">Save changes</button>
         </div>
       </div>
     </div>

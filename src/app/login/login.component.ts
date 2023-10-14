@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertyfyService } from '../services/alertyfy.service';
 import { AuthService } from '../services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CommonService } from '../common.service';
 // import * as alertyfy from 'alertifyjs';
 
 
@@ -27,6 +28,7 @@ export class LoginComponent {
     private alertyfy: AlertyfyService,
     private authService: AuthService,
     private activatedRoute:ActivatedRoute,
+    private commanservice:CommonService
   ) { }
   ngOnInit() {
     this.activatedRoute.queryParamMap.subscribe(params => {
@@ -36,14 +38,15 @@ export class LoginComponent {
   }
   OnLogin(loginForm: NgForm) {
     const user = this.authService.addUsers(loginForm.value)
-    console.log(user,'12222')
+    console.log(user,'1010:::')
     if (user) {
       this.loader = true;
+      this.commanservice.UserBehavior(user)
       setTimeout(() => {
         if (this.retUrl != null) {
           this.route.navigate([this.retUrl]);
         } else {
-          this.route.navigate(['']);
+          this.route.navigate(['House']);
         }
         this.alertyfy.Success('successfully Registeted....');
       }, 1000)
